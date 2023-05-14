@@ -1,0 +1,91 @@
+# Calculate 
+import math
+print("Welcome to my calculator")
+result = 0
+i = 0
+opperation = 0
+while opperation != "end" : 
+    opperation = input("What would you like to do : ")   
+    if opperation == "end": 
+        print(result)
+        break  
+    
+    if opperation == "clear":
+        result = 0
+        i = 0
+        continue
+      
+    if i != 0 : 
+        SecundNummber = float(input("please enter your second : ")) 
+        if opperation == "+" : 
+            print(str(result)+"+"+str(SecundNummber)+"="+str(result + SecundNummber))
+            result = result + SecundNummber
+            
+        elif opperation == "**" : 
+            print(str(result)+"**"+str(SecundNummber)+"="+str(result ** SecundNummber))
+            result = result ** SecundNummber
+            
+        elif opperation == "-" : 
+            print(str(result)+"-"+str(SecundNummber)+"="+str(result - SecundNummber))
+            result = result - SecundNummber
+            
+        elif opperation == "log" : 
+            print(str(result)+"log"+str(SecundNummber)+"="+str(math.log(result,SecundNummber)))
+            result = math.log(result,SecundNummber)
+            
+        elif opperation == "/" : 
+            if SecundNummber == 0 : 
+                print("Mathematik Problem !")
+            else:
+                print(str(result)+"/"+str(SecundNummber)+"="+str(result / SecundNummber))
+                result = result / SecundNummber
+                
+        elif opperation == "*" : 
+            print(str(result)+"*"+str(SecundNummber)+"="+str(result * SecundNummber))
+            result = result * SecundNummber
+            
+        elif opperation == "sqrt" : 
+            if result > 0 and SecundNummber > 0 :
+                
+                print(str(result)+"sqrt"+str(SecundNummber)+"="+str(result ** (1/SecundNummber)))
+                result = result ** (1/SecundNummber)
+            else : 
+                print("Error : Nummber is not corect !")
+                
+        else: 
+            print("Error : Opperation  not found !")
+    else:   
+        FirstNummber = float(input("please enter your first nummber : "))
+        SecundNummber = float(input("please enter your second : ")) 
+        if opperation == "+" : 
+            result = FirstNummber + SecundNummber 
+            print(str(FirstNummber)+"+"+str(SecundNummber)+"="+str(result))
+        elif opperation == "**" : 
+            result = FirstNummber ** SecundNummber
+            print(str(FirstNummber)+"**"+str(SecundNummber)+"="+str(result))
+        elif opperation == "-" : 
+            result = FirstNummber - SecundNummber
+            print(str(FirstNummber)+"-"+str(SecundNummber)+"="+str(result))
+        elif opperation == "log" : 
+            if FirstNummber > 0 and SecundNummber > 0 and FirstNummber != 1:
+                result = math.log(FirstNummber,SecundNummber)
+                print(str(FirstNummber)+"sqrt"+str(SecundNummber)+"="+str(result))
+            else : 
+                print("Error : Nummber is not corect !")    
+        elif opperation == "/" : 
+            if SecundNummber == 0:
+                print("Mathematik problem !")
+            else:
+                print(str(FirstNummber)+"/"+str(SecundNummber)+"="+str(FirstNummber / SecundNummber))
+        elif opperation == "*" : 
+            result = FirstNummber * SecundNummber
+            print(str(FirstNummber)+"*"+str(SecundNummber)+"="+str(result))
+        elif opperation == "sqrt" : 
+            if FirstNummber > 0 and SecundNummber > 0:
+                result = FirstNummber ** SecundNummber
+                print(str(FirstNummber)+"sqrt"+str(SecundNummber)+"="+str(result))
+            else : 
+                print("Error : Nummber is not corect !")
+        else: 
+            print("Error : Opperation  not found !")
+    i = i + 1
